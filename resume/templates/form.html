@@ -1,0 +1,371 @@
+
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'home1.css' %}">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    
+
+    <!-- https://codepen.io/redstapler/pen/LMyLxP -->
+<!-- class for wrapper -->
+
+
+
+    <div class="">  
+      <div class="container-fluid wrapper border border-warning example " style="height:1700px; overflow:auto">
+        <div class="row h-100">
+            <div class="col-2"></div>
+    
+            <div class="col-8 border border-white h-100 bg-white mt-4 example" style="border-radius:15px; overflow:auto;">
+              
+              <form action="{%url 'final'%}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="exampleFormControlFile1"><strong>Profile <span class="text-danger">*</span> :</strong></label>
+                  
+                  <input name="profile1" type="file" id="attach">
+                </div>
+
+                
+
+                <div class="form-row">
+                  <div class="col">
+                    <label for="fname"> <i class="fa fa-user ml-1"></i> <strong>First name <span class="text-danger">*</span>:</strong></label>
+                    <input type="text" name="fname" id="fname" class="form-control" placeholder="First name">
+                  </div>
+                  <div class="col">
+                    <label for="lname"><strong>Last name <span class="text-danger">*</span>:</strong></label>
+                    <input type="text" name="lname" id="lname" class="form-control" placeholder="Last name">
+                  </div>
+                </div>
+
+                
+                <div class="form-row mt-1 ">
+                  <div class="col">
+                    <label for="inputZip" > <i class="fa fa-phone ml-1"></i> <strong >Phone number <span class="text-danger">*</span> : </strong></label>
+                    <input type="text" name="pnumber" class="form-control" id="inputZip" required>
+                  </div>
+
+                  <div class="col">
+                    <label for="inputZip"><strong>Zip :</strong></label>
+                    <input type="text" name="zip" class="form-control" id="inputZip" required>
+                  </div>
+
+                  <div class="col">
+                    <label for="inputCity"><strong>City <span class="text-danger">*</span>:</strong></label>
+                    <input type="text" name="city" class="form-control" id="inputCity" required>
+                  </div>
+                </div>
+
+
+                <div class="form-group mt-1">
+                  <label for="inputAddress"> <i class="fa fa-map-marker-alt ml-1"></i> <strong>Address <span class="text-danger">*</span>:</strong></label>
+                  <input type="text" name="address" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+                </div>
+
+
+
+                <hr class="bg-dark w-90" style="height:0.6px;">
+
+                
+                <div class="form-group mt-1">
+                  <label for="inputEmail4"> <i class="fa fa-envelope mt-2"></i> <strong>Email <span class="text-danger">*</span>:</strong></label>
+                  <input type="email" name="email" class="form-control ml-0" id="inputEmail4" placeholder="Email" required>
+
+                  <label for="inputEmail4"> <i class="fab fa-linkedin mt-2"></i> <strong>Linkdin <span class="text-danger">*</span>:</strong></label>
+                  <input type="text" name="linkdin" class="form-control ml-0" id="inputEmail4" placeholder="linkedin link" required>
+
+                  <label for="inputEmail4"> <i class="fab fa-github mt-2"></i> <strong>GitHub <span class="text-danger">*</span>:</strong></label>
+                  <input type="text" name="github" class="form-control ml-0" id="inputEmail4" placeholder="github profile link" required>
+
+                  <label for="inputEmail4"> <i class="fab fa-facebook mt-2"></i> <strong>Facebook :</strong></label>
+                  <input type="text" name="facebook" class="form-control ml-0" id="inputEmail4" placeholder="facebook link">
+
+                  <label for="inputEmail4"> <i class="fab fa-pinterest mt-2"></i> <strong>Pinterest :</strong></label>
+                  <input type="text" name="pinterest" class="form-control ml-0" id="inputEmail4" placeholder="pinterest link">
+                </div>
+
+                <hr class="bg-dark w-90" style="height:0.6px;">
+
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1"><i class="fa fa-briefcase"></i><strong>Carrier objective :</strong></label>
+                  <textarea name="obj" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                </div>
+
+                <hr class="bg-dark w-90" style="height:0.6px;">
+
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1"><i class="fa fa-briefcase"></i><strong>Experience :</strong></label>
+                  <textarea name="exp" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+
+                <hr class="bg-dark w-90" style="height:0.6px;">
+
+                <div class="form-row mt-1 ">
+                  <div class="col">
+                    <label for="inputZip"> <i class="fa fa-school ml-1"></i> <strong>SSLC from [School name] :</strong></label>
+                    <input type="text" name="sname" class="form-control" id="inputZip" required>
+                  </div>
+
+                  <div class="col">
+                    <label for="inputZip"><i class="fa fa-calendar ml-1"></i> <strong>Year :</strong></label>
+                    <input type="text" name="syear" class="form-control" id="inputZip" required>
+                  </div>
+
+                  <div class="col">
+                    <label for="inputZip"><i class="fa fa-graduation-cap ml-1"></i><strong>Board :</strong></label>
+                    <input type="text" name="sboard" class="form-control" id="inputZip" required>
+                  </div>
+                </div>
+
+                
+                <div class="form-row mt-1">
+                  <div class="col">
+                    <label for="inputZip"><i class="fa fa-map-marker-alt ml-1"></i> <strong>Institution :</strong></label>
+                    <input type="text" name="sint" class="form-control" id="inputZip" required>
+                  </div>
+
+                  <div class="col">
+                    <label for="inputZip"><i class="fa fa-certificate ml-1"></i><strong>Marks/CGPA :</strong></label>
+                    <input type="text" name="smarks" class="form-control" id="inputZip" required>
+                  </div>
+                </div>
+
+                
+                <hr class="bg-dark w-90" style="height:0.6px;">
+
+                <div class="form-row mt-1 ">
+                  <div class="col">
+                    <label for="inputZip"> <i class="fa fa-school ml-1"></i> <strong>PUC from [collage name] :</strong></label>
+                    <input type="text" name="pname" class="form-control" id="inputZip">
+                  </div>
+
+                  <div class="col">
+                    <label for="inputZip"><i class="fa fa-calendar ml-1"></i> <strong>Year :</strong></label>
+                    <input type="text" name="pyear" class="form-control" id="inputZip">
+                  </div>
+
+                  <div class="col">
+                    <label for="inputZip"><i class="fa fa-graduation-cap ml-1"></i><strong>Board :</strong></label>
+                    <input type="text" name="pboard" class="form-control" id="inputZip">
+                  </div>
+                </div>
+
+                
+                <div class="form-row mt-1">
+                  <div class="col">
+                    <label for="inputZip"><i class="fa fa-map-marker-alt ml-1"></i> <strong>Institution :</strong></label>
+                    <input type="text" name="pint" class="form-control" id="inputZip">
+                  </div>
+
+                  <div class="col">
+                    <label for="inputZip"><i class="fa fa-certificate ml-1"></i><strong>Marks/CGPA :</strong></label>
+                    <input type="text" name="pmarks" class="form-control" id="inputZip">
+                  </div>
+                </div>
+
+                
+                <hr class="bg-dark w-90" style="height:0.6px;">
+
+                <div class="form-row mt-1 ">
+                  <div class="col">
+                    <label for="inputZip"> <i class="fa fa-school ml-1"></i> <strong>Graduation from [University name] :</strong></label>
+                    <input type="text" name="uname" class="form-control" id="inputZip">
+                  </div>
+
+                  <div class="col">
+                    <label for="inputZip"><i class="fa fa-calendar ml-1"></i> <strong>Year :</strong></label>
+                    <input type="text" name="uyear" class="form-control" id="inputZip">
+                  </div>
+
+                  <div class="col">
+                    <label for="inputZip"><i class="fa fa-graduation-cap ml-1"></i><strong>Board :</strong></label>
+                    <input type="text" name="uboard" class="form-control" id="inputZip">
+                  </div>
+                </div>
+
+                
+                <div class="form-row mt-1">
+                  <div class="col">
+                    <label for="inputZip"><i class="fa fa-map-marker-alt ml-1"></i> <strong>Institution :</strong></label>
+                    <input type="text" name="uint" class="form-control" id="inputZip">
+                  </div>
+
+                  <div class="col">
+                    <label for="inputZip"><i class="fa fa-certificate ml-1"></i><strong>Marks/CGPA :</strong></label>
+                    <input type="text" name="umarks" class="form-control" id="inputZip">
+                  </div>
+                </div>
+
+
+                <hr class="bg-dark w-90" style="height:0.6px;">
+
+                <div class="form-group mt-1">
+
+                  <div id="textFieldsContainer"> </div>
+                 
+                  <button id="addFieldBtn" type="button" class="btn btn-outline-primary mt-2"><i class="fa fa-project-diagram"></i> Add project fields</button>
+                 
+                </div>
+
+                <hr class="bg-dark w-90" style="height:0.6px;">
+
+
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1"><strong>Soft Skills</strong></label>
+                  <textarea class="form-control" name="sskill" id="exampleFormControlTextarea1" rows="3" placeholder="write skills seperated with commas, example good listener, time management, leadership, etc etc" required></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1"><strong>Technical Skills</strong></label>
+                  <textarea class="form-control" name="tskill" id="exampleFormControlTextarea1" rows="3" placeholder="write skills seperated with commas, example Git,phyton,java,cpp etc"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1"><strong>Language</strong></label>
+                  <textarea class="form-control" name="lang" id="exampleFormControlTextarea1" rows="3" placeholder="write skills seperated with commas, kannada, hindi, english, tamil" required></textarea>
+                </div>
+
+
+                <hr class="bg-dark w-90" style="height:0.6px;">
+
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1"><i class="fa fa-briefcase"></i><strong>Declaration :</strong></label>
+                  <textarea class="form-control" name="declaration" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+
+
+                <div>
+
+                  <a><button type="submit" name="btn" value="preview" class="btn btn-outline-primary mt-3 mr-5 mb-3 float-right"> Preview resume <div class="spinner-border text-primary spinner-border-sm " role="status"></div></button></a>
+
+                  <a><button type="submit" name="btn" value="download" class="btn btn-outline-primary mt-3 mr-5 mb-3 float-right">Dounload resume <i class="fa fa-download"></i></button></a>
+
+                </div>
+         
+                </div>
+
+
+              </form>
+
+            </div>
+    
+            <div class="col-2"></div>
+        </div>
+    </div>  
+    </div>
+
+
+
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          const textFieldsContainer = document.getElementById("textFieldsContainer");
+          const addFieldBtn = document.getElementById("addFieldBtn");
+
+          let fieldCount = 1; // To keep track of the number of text fields
+
+          function createThreeTextFields() {
+
+                const textFieldDiv = document.createElement("div");
+
+              
+                  const label = document.createElement("label");
+                  label.textContent = " Project name "+ fieldCount + ":";
+                  const prjname = document.createElement("i");
+                  prjname.className = "fa fa-cogs";
+                  label.style.fontWeight = "bold";
+                  label.for="projectName" + fieldCount;
+                  textFieldDiv.appendChild(prjname);
+                  textFieldDiv.appendChild(label);
+  
+                  const textField = document.createElement("input");
+                  textField.type = "text";
+                  textField.id = "projectName" + fieldCount;
+                  textField.name = "projectName" + fieldCount;
+                  textField.class="form-control";
+                  textField.style.width = "100%";
+                  textFieldDiv.appendChild(textField);
+                
+
+
+              
+                  const label1 = document.createElement("label");
+                  const desc = document.createElement("i");
+                  desc.className = "fa fa-pencil-alt";
+                  label1.textContent = " Description  " + fieldCount + ":" ;
+
+                  label1.style.fontWeight = "bold";
+                  label1.for = "projectdesc" + fieldCount;
+                  textFieldDiv.appendChild(desc);
+                  textFieldDiv.appendChild(label1);
+  
+                  const textField1 = document.createElement("input");
+                  textField1.type = "text";
+                  textField1.id = "projectdesc" + fieldCount;
+                  textField1.name = "projectdesc" + fieldCount;
+                  textField1.style.width = "100%";
+                  textField1.class="form-control";
+                  textFieldDiv.appendChild(textField1);
+                
+                
+
+
+                const label2 = document.createElement("label");
+                const githubIcon = document.createElement("i");
+                githubIcon.className = "fab fa-github";
+                label2.textContent = " Github link  " + fieldCount + ":"
+                label2.style.fontWeight = "bold";
+                label2.for = "projectlink" + fieldCount;
+                textFieldDiv.appendChild(githubIcon);
+                textFieldDiv.appendChild(label2);
+
+                const textField2 = document.createElement("input");
+                textField2.type = "text";
+                textField2.id = "projectlink" + fieldCount;
+                textField2.name = "projectlink" + fieldCount;
+                textField2.style.width = "100%";
+                textField2.class="form-control";
+                textFieldDiv.appendChild(textField2);
+
+
+
+
+                textFieldsContainer.appendChild(textFieldDiv);
+
+
+
+
+                fieldCount++;
+            
+        }
+
+          // Event listener for the button click
+          addFieldBtn.addEventListener("click", function() {
+              createThreeTextFields();
+          });
+      });
+  </script>
+    
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
